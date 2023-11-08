@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate
 from django.core.cache import cache
 from rest_framework import status
-from rest_framework.exceptions import ValidationError,
+from rest_framework.exceptions import ValidationError
 from rest_framework.generics import (CreateAPIView, GenericAPIView,
                                      RetrieveUpdateAPIView)
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -52,9 +52,9 @@ class UserAPIView(RetrieveUpdateAPIView):
     model = User
     serializer_class = UserSerializer
     permission_classes = (IsAuthenticated,)
+
     def get_object(self):
         return self.request.user
-
 
 
 class LoginAPIView(APIView):
@@ -71,4 +71,3 @@ class LoginAPIView(APIView):
             tokens = user.tokens()
             data = TokenSerializer(tokens).data
             return Response(data=data, status=200)
-            
