@@ -1,20 +1,6 @@
-import hashlib
-import random
-import uuid
-
-from django.contrib.auth import authenticate
-from django.contrib.auth.models import update_last_login
-from django.contrib.auth.password_validation import validate_password
 from phonenumber_field.serializerfields import PhoneNumberField
 from rest_framework import serializers
-from rest_framework.exceptions import AuthenticationFailed, ValidationError
 from rest_framework.serializers import ModelSerializer, Serializer
-from rest_framework_simplejwt.serializers import PasswordField
-from rest_framework_simplejwt.settings import api_settings
-from rest_framework_simplejwt.tokens import RefreshToken
-
-from apps.tools.functions import authenticate_token, send_sms
-from apps.tools.token import SignUpToken
 
 from .models import User
 
