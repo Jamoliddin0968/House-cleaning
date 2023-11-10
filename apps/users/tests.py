@@ -10,14 +10,14 @@ from apps.users.models import User
 class UserTest(TestCase):
 
     def setUp(self):
-        self.phone_number = "+998905360968"
+        self.phone_number = "+998330221211"
         self.first_name = "John"
 
     def test_user_creation(self):
         item = User.objects.create(
-            first_name="John", phone_number="+998905360967")
-        self.assertEqual(item.first_name, "John")
-        self.assertEqual(item.phone_number, "+998905360967")
+            first_name="John", phone_number=self.phone_number)
+        self.assertEqual(item.first_name, self.first_name)
+        self.assertEqual(item.phone_number, self.phone_number)
 
     def test_phone_number_registration(self):
         url = reverse('sign_up')

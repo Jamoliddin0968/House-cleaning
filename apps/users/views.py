@@ -10,7 +10,7 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenViewBase
 
-from apps.tools.functions import authenticate_token, create_code, send_sms
+from apps.tools.functions import create_code, send_sms
 from apps.users.models import User
 from apps.users.serializers import (CodeSerializer, LoginSerializer,
                                     LogoutSerializer, PhoneNumberSerializer,
