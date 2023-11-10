@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # my apps
     'apps.users.apps.UsersConfig',
     'apps.services.apps.ServicesConfig',
+    'apps.orders.apps.OrdersConfig',
 
 
     # 3rd packages
@@ -140,7 +141,8 @@ AUTH_USER_MODEL = 'users.User'
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.redis.RedisCache",
-        "LOCATION": "redis://red-cgrf4bvdvk4n7brrqn1g:6379",
+        # "LOCATION": "redis://red-cgrf4bvdvk4n7brrqn1g:6379",
+        'LOCATION': 'redis://127.0.0.1:6379',
     }
 }
 
@@ -151,5 +153,4 @@ SPECTACULAR_SETTINGS = {
     'DESCRIPTION': 'Your project description',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
-    # OTHER SETTINGS
 }

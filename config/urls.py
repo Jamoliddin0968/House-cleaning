@@ -17,6 +17,7 @@ swagger_urlpatterns = [
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('apps.users.urls')),
+    path('contact/', include('apps.orders.urls')),
 ]
 
 urlpatterns += swagger_urlpatterns
