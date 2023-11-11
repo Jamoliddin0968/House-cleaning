@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     "phonenumber_field",
-    'drf_spectacular',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -141,16 +141,7 @@ AUTH_USER_MODEL = 'users.User'
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.redis.RedisCache",
-        "LOCATION": "redis://red-cgrf4bvdvk4n7brrqn1g:6379",
-        # 'LOCATION': 'redis://127.0.0.1:6379',
+        # "LOCATION": "redis://red-cgrf4bvdvk4n7brrqn1g:6379",
+        'LOCATION': 'redis://127.0.0.1:6379',
     }
-}
-
-# drf spectatcular
-
-SPECTACULAR_SETTINGS = {
-    'TITLE': 'Your Project API',
-    'DESCRIPTION': 'Your project description',
-    'VERSION': '1.0.0',
-    'SERVE_INCLUDE_SCHEMA': False,
 }
