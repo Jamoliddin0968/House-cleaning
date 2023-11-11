@@ -1,14 +1,19 @@
 from django.contrib import admin
 
-from apps.services.models import Category, SubCategory
+from .models import Category,SubCategory
 
 # Register your models here.
 
 
-class SubCategoryInline(admin.TabularInline):
-    model = SubCategory
 
-
-@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    inlines = [SubCategoryInline,]
+    list_display = ['name_uz',"name_ru","name_en"]
+    list_editable = ["name_ru","name_en"]
+
+admin.site.register(Category,CategoryAdmin)
+
+
+class SubCategoryAdmin(admin.ModelAdmin):
+    list_display = ['name_uz',"name_ru","name_en"]
+    list_editable = ["name_ru","name_en"]
+admin.site.register(SubCategory,SubCategoryAdmin)
